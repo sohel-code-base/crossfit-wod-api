@@ -7,6 +7,7 @@
 ```sh
 cd crossfit-wod-api
 npm install
+npm run dev
 ```
 ### READ All records:
 * Endpoint: `http://localhost:3000/api/v1/workouts`
