@@ -6,8 +6,13 @@ const getAllWorkouts = () => {
     return allWorkouts;
 };
 
-const getOneWorkout = () => {
-    return;
+const getOneWorkout = (workoutId) => {
+    try {
+        const workout = Workout.getOneWorkout(workoutId);
+        return workout;
+    } catch (error) {
+        throw error;
+    }
 };
 
 const createNewWorkout = (newWorkout) => {

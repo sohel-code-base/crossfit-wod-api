@@ -12,9 +12,28 @@ const getAllWorkouts = (req, res) => {
 };
 
 const getOneWorkout = (req, res) => {
-    const workout = workoutService.getOneWorkout();
+    const {params : { workoutId },} = req;
 
-    res.send("Get an existing workout");
+    if (!workoutId) {
+        res
+            .status(400)
+            .send({
+                status: "FAILED",
+                data: {error: "Parameter ':workoutId' can not be empty"}
+            });
+    }
+
+    try {
+        const workout = workoutService.getOneWorkout(workoutId);
+        res.send({
+            status: "OK",
+            data: workout,
+        });
+    } catch (error) {
+        res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
+    }
 };
 
 const createNewWorkout = (req, res) => {
@@ -53,6 +72,15 @@ const createNewWorkout = (req, res) => {
 };
 
 const updateOneWorkout = (req, res) => {
+    const {body, params: {workoutId},} = req;
+    if (!workoutId) {
+        res
+            .status(400)
+            .send({
+                status: "FAILED",
+                data: { error: "Parameter ':workoutId' can not be empty" },
+            });
+    }
     const updatedWorkout = workoutService.updateOneWorkout();
 
     res.send("Update an existing workout");
