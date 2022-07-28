@@ -65,7 +65,7 @@
       ]
     },
     {
-      "name": "Core Buster",
+      "name": "Core Buster Updated",
       "mode": "AMRAP 20",
       "equipment": [
         "rack",
@@ -84,7 +84,8 @@
       ],
       "id": "48d3b53f-b071-4069-a57e-2c4b209225b0",
       "createdAt": "7/24/2022, 6:24:55 PM",
-      "updatedAt": "7/24/2022, 6:24:55 PM"
+      "updatedAt": "7/24/2022, 6:24:55 PM",
+      "updateAt": "7/28/2022, 6:25:51 PM"
     }
   ]
 }

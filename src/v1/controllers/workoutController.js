@@ -81,7 +81,17 @@ const updateOneWorkout = (req, res) => {
                 data: { error: "Parameter ':workoutId' can not be empty" },
             });
     }
-    const updatedWorkout = workoutService.updateOneWorkout();
+    try {
+        const updatedWorkout = workoutService.updateOneWorkout(workoutId, body);
+        res.send({status: "OK", data: updatedWorkout});
+    } catch (error) {
+        res
+            .status(error?.satus || 500)
+            .send({
+                status: "FAILED",
+                data: { error: error?.message || error }
+            })
+    }
 
     res.send("Update an existing workout");
 };
