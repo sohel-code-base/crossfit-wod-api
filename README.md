@@ -18,30 +18,44 @@ npm run dev
 * Data in body:
 ```sh
 {
-  "name": "Core Buster",
-  "mode": "AMRAP 20",
+  "name": "Workout#1",
+  "mode": "mode",
   "equipment": [
-    "rack",
-    "barbell",
-    "abmat"
+    "equipment#1",
+    "equipment#2"
   ],
   "exercises": [
-    "15 toes to bars",
-    "10 thrusters",
-    "30 abmat sit-ups"
+    "exercises#1",
+    "1exercises#2"
   ],
   "trainerTips": [
-    "Split your toes to bars into two sets maximum",
-    "Go unbroken on the thrusters",
-    "Take the abmat sit-ups as a chance to normalize your breath"
+    "Updated Tips#1",
+    "Updated Tips#2"
   ]
 }
 ```
 ### UPDATE record:
-* Endpoint: 
+* Endpoint: `http://localhost:3000/api/v1/workouts/:workoutId`
 * Method: `PATCH`
 * Data in body:
-
+```sh
+{
+  "name": "Workout#2",
+  "mode": "mode",
+  "equipment": [
+    "equipment#1",
+    "equipment#2"
+  ],
+  "exercises": [
+    "exercises#1",
+    "1exercises#2"
+  ],
+  "trainerTips": [
+    "Updated Tips#1",
+    "Updated Tips#2"
+  ]
+}
+```
 ### DELETE record:
 * Endpoint: 
 * Method: `DELETE`

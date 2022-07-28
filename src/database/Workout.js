@@ -71,7 +71,7 @@ const updateOneWorkout = (workoutId, changes) => {
     const updatedWorkout = {
         ...DB.workouts[indexForUpdate],
         ...changes,
-        updateAt: new Date().toLocaleString("en-US", {timeZone: "UTC"}),
+        updatedAt: new Date().toLocaleString("en-US", {timeZone: "UTC"}),
     }
 
     DB.workouts[indexForUpdate] = updatedWorkout;
